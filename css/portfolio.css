@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face{
+    font-family: 'NT SEAWAVE (alternative)';
+    src: url('/fonts/NT\ SEAWAVE\ \(alternative\).otf') format('opentype');
+}
+@font-face{
+    font-family: 'NT SEAWAVE (standart)';
+    src: url('/fonts/NT\ SEAWAVE\ \(standart\).otf') format('opentype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background: #161220;
+
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+}
+
+.wrapper{
+    padding: 52px 75px 45px 75px;
+    height: auto;
+}
+
+/*home button*/
+.home{
+    position: absolute;
+    top: 88px;
+    z-index: 10;
+
+    background-color: #F8E9E9;
+    border: solid 1px #F8E9E9;
+    border-radius: 100%;
+    width: 82px;
+    height: 82px;
+    transition: all .2s ease-in-out;
+}
+.homepath{
+    fill: #161220;
+    transform: translate(30%, 30%);
+    transition: all .2s ease-in-out;
+}
+
+/*container*/
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    width: 80%;
+    min-height: 187px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 45px;
+    row-gap: 35px;
+    margin: 50px auto 50px auto;
+}
+
+/*navigators*/
+.fixed{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 75px;
+    display: flex;
+    align-items: center;
+}
+.fixed-left{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 75px;
+    display: flex;
+    align-items: center;
+}
+.next-prev{
+    border: solid 1px #F8E9E9;
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg);
+    transition: all .2s ease-in-out;
+}
+.next{
+    transform: rotate(45deg) translate(28px,-45px) scale(1.5);
+    fill: #F8E9E9;
+    transition: all .2s ease-in-out;
+}
+.prev{
+    transform: rotate(-135deg) translate(-115px,-45px) scale(1.5);
+    fill: #F8E9E9;
+    transition: all .2s ease-in-out; 
+}
+
+.mob{display: none;}
+
+/*text options*/
+header{
+    font-family: 'NT SEAWAVE (alternative)';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 155px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #F8E9E9;
+}
+p{
+    text-align: center;
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    position: absolute;
+    width: 97%;
+    bottom: 45px;
+}
+
+/*hover*/
+.next-prev:hover{
+    background: #F8E9E9;
+    cursor: pointer;
+}
+.next-prev:hover .next{
+    fill: #161220;
+    cursor: pointer;
+}
+.next-prev:hover .prev{
+    fill: #161220;
+    cursor: pointer;
+}
+.home:hover{
+    background: #161220;
+    cursor: pointer;
+}
+.home:hover .homepath{
+    fill: #F8E9E9;
+}
+
+
+/*response*/
+@media (max-width:1210px){
+    .home{
+        position: static;
+        width: 60px;
+        height: 60px;
+        margin-bottom: 25px;
+    }
+    .homepath{
+        transform: translate(17px,17px) scale(0.8);
+    }
+
+    .flex{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header{
+        font-size: 48px;
+        line-height: 58px;
+    }
+    p{
+        font-size: 12px;
+        line-height: 13px;
+    }
+
+    .fixed, .fixed-left{display: none;}
+
+    .container{
+        width: 100%;
+        column-gap: 43px;
+    }
+
+    .mob{display: block;}
+    .flex-mob{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 32px;
+    }
+    .next-prev{
+        width: 36px;
+        height: 36px;
+    }
+    .next{
+        transform: rotate(45deg) scale(0.7) translate(6.5px,-30px);
+    }
+    .prev{
+        transform: rotate(-135deg) scale(0.7) translate(-66px,-30px);
+    }
+}
